@@ -27,7 +27,7 @@ public class Anagram {
 
     public String reverse(String text) {
 
-        if(text == null) {
+        if (text == null) {
             return "";
         }
 
