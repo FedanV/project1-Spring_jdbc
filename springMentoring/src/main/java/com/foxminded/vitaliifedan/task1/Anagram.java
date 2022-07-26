@@ -27,6 +27,10 @@ public class Anagram {
 
     public String reverse(String text) {
 
+        if(text == null) {
+            return "";
+        }
+
         String[] words = text.split(" ");
         List<String> reversedWords = new ArrayList<>();
         for (String word : words) {
