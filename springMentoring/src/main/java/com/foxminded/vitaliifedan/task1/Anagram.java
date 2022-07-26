@@ -28,7 +28,7 @@ public class Anagram {
     public String reverse(String text) {
 
         if (text == null) {
-            return "";
+            throw new IllegalArgumentException("$text must be String but null returned");
         }
 
         String[] words = text.trim().split(" ");
