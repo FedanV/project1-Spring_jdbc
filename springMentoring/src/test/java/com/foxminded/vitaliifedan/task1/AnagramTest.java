@@ -12,10 +12,11 @@ public class AnagramTest {
         anagram = new Anagram();
     }
 
-    @Test
+    @Test()
     void Should_EmptyString_When_getNull() {
-        String actualResult = anagram.reverse(null);
-        Assertions.assertEquals("", actualResult);
+        IllegalArgumentException thrown = Assertions.assertThrows(IllegalArgumentException.class,
+                () -> anagram.reverse(null));
+        Assertions.assertEquals("$text must be String but null returned", thrown.getMessage());
     }
 
     @Test
