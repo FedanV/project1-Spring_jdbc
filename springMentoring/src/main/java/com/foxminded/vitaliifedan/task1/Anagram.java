@@ -8,17 +8,19 @@ public class Anagram {
     private String convert(String word) {
 
         char[] wordChars = word.toCharArray();
-        for (int i = 0, j = wordChars.length - 1; i <= j; ) {
-            if (!Character.isAlphabetic(wordChars[i])) {
-                i++;
-            } else if (!Character.isAlphabetic(wordChars[j])) {
-                j--;
+        int headIndex = 0;
+        int tailIndex = wordChars.length - 1;
+        while (headIndex <= tailIndex) {
+            if (!Character.isAlphabetic(wordChars[headIndex])) {
+                headIndex++;
+            } else if (!Character.isAlphabetic(wordChars[tailIndex])) {
+                tailIndex--;
             } else {
-                char c = wordChars[i];
-                wordChars[i] = wordChars[j];
-                wordChars[j] = c;
-                i++;
-                j--;
+                char temp = wordChars[headIndex];
+                wordChars[headIndex] = wordChars[tailIndex];
+                wordChars[tailIndex] = temp;
+                headIndex++;
+                tailIndex--;
             }
         }
 
