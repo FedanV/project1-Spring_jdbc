@@ -13,7 +13,7 @@ class AnagramTest {
     }
 
     @Test()
-    void Should_EmptyString_When_getNull() {
+    void Should_Exception_When_getNull() {
         IllegalArgumentException thrown = Assertions.assertThrows(IllegalArgumentException.class,
                 () -> anagram.reverse(null));
         Assertions.assertEquals("$text must be String but null returned", thrown.getMessage());
